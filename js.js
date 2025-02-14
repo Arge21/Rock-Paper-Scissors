@@ -1,7 +1,14 @@
 const prompt = require('prompt-sync')
 
-function getComputerChoice(choice) {
-    return choice = Math.floor(Math.random() * (3 - 0));
+function getComputerChoice() {
+    let choice = Math.floor(Math.random() * (3 - 0));
+         if  (choice === 0) {
+            return ('Rock')
+        } else if (choice === 1) {
+            return ('Paper')
+        } else {
+            return ('Scissors')
+        }
 }
 
-console.log(getComputerChoice('bruh'))
+console.log(getComputerChoice())
