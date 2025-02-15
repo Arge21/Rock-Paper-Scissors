@@ -1,5 +1,9 @@
 const prompt = require('prompt-sync')()
 
+let humanScore = 0;
+let computerScore = 0;
+
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * (3 - 0));
          if  (choice === 0) {
@@ -11,7 +15,7 @@ function getComputerChoice() {
         }
 }
 
-console.log(getComputerChoice())
+// console.log(getComputerChoice())
 
 
 // const playerChoice = prompt('type "Rock","Paper", or "Scissors": ')
@@ -26,4 +30,25 @@ function getHumanChoice() {
     }
 }
 
-console.log(getHumanChoice())
+//  console.log(getHumanChoice())
+
+function playRound (humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        return ("It's a tie!");
+      } else if (
+        (humanChoice === "Rock" && computerChoice === "Scissors") ||
+        (humanChoice === "Paper" && computerChoice === "Rock") ||
+        (humanChoice === "Scissors" && computerChoice === "Paper")
+      ) {
+        console.log(++humanScore)
+        return (`You win! ${humanChoice} beats ${computerChoice}`);
+      } else {
+        return (`You lose! ${computerChoice} beats ${humanChoice}`);
+      }    
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+// playRound(humanSelection, computerSelection);
+
+console.log(playRound(humanSelection, computerSelection))
