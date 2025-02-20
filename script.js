@@ -14,3 +14,17 @@ function getComputerChoice () {
 }
 
 console.log(getComputerChoice())
+
+function getHumanChoice () {
+    let choice = prompt(`Select Rock, Paper or Scissors`);
+
+    if (choice.toLocaleLowerCase() === "rock") {
+        return `Rock`
+    } else if (choice.toLowerCase() === `paper`){
+        return `Paper`
+    } else if (choice.toLowerCase() === `scissors`) {
+        return `Scissors`
+    }
+}
+
+console.log(getHumanChoice())
